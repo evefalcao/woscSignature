@@ -114,22 +114,23 @@
             height: 24px;
             width: 24px
         }
-
         .text-color-base {
             color: #151515
         }
-
         .text-color-highlight {
             color: #cb3d48
         }
-
         .text-color-link,.text-color-link:focus,.text-color-link:hover {
             color: #4168a5
         }
-
         .text-color-small {
             color: #333333
         }
+
+        .input-style input {
+            margin-top: 8px;
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
     </style>
   </head>
@@ -248,19 +249,28 @@
             </tr>
 
             </table>
+            
+            <div class="input-style" style="user-select: none;">
+                <p>Enter your information below:</p>
+                <input type="text" id="input-name" placeholder="Name">
+                <br>
+                <input type="text" id="input-pronoun" placeholder="Pronoun">
+                <br>
+                <input type="text" id="input-title" placeholder="Title">
+                <br>
+                <input type="text" id="input-phone" placeholder="Phone">
+                <br>
+                <input type="text" id="input-other" placeholder="Other (Optional)">
+                <br>
+                <input type="text" id="input-email" placeholder="Email">
+                <br>
+                <input type="text" id="input-website" placeholder="Website (Optional)">
+                <br>
+                <br>
+                <button onClick="fillInformation()">Submit</button>
+            </div>
     </center>
 
-    <div>
-        <p>Enter your information below:</p>
-        <input type="text" id="input-name" placeholder="Name">
-        <input type="text" id="input-pronoun" placeholder="Pronoun">
-        <input type="text" id="input-title" placeholder="Title">
-        <input type="text" id="input-phone" placeholder="Phone">
-        <input type="text" id="input-other" placeholder="Phone 2/Other">
-        <input type="text" id="input-email" placeholder="Email">
-        <input type="text" id="input-website" placeholder="Website (Optional)">
-        <button onClick="fillInformation()">Submit</button>
-    </div>
 
     <script>
         function fillInformation(){
