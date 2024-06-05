@@ -330,6 +330,9 @@
             var elem = document.getElementById("copybtn");
             if (elem.innerHTML=="Copy") elem.innerHTML = "Copied!";
             else elem.innerHTML = "Copy";
+            setTimeout(() => {
+                elem.innerHTML = "Copy"
+            }, 1000)
         }
 
     </script>
