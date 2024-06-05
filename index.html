@@ -133,13 +133,45 @@
             margin-top: 8px;
         }
 
+        .styled {
+            width: 100px;
+            border: 0;
+            line-height: 2.5;
+            padding: 20 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            border-radius: 5px;
+            background-color: #4168a5;
+            background-image: linear-gradient(
+                to top left,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1) 10%,
+                rgba(0, 0, 0, 0)
+            );
+            box-shadow:
+                inset 2px 2px 3px rgba(255, 255, 255, 0.2),
+                inset -2px -2px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .styled:hover {
+            background-color: #4160a0
+        }
+
+        .styled:active {
+            box-shadow:
+                inset -1px -1px 1px rgba(255, 255, 255, 0.6),
+                inset 1px 1px 1px rgba(0, 0, 0, 0.6);
+        }
+
+
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
     </style>
   </head>
 
   <body>
     <center class="wrapper">
-        <table class="main" width="100%">
+        <table id="signature" class="main" width="100%">
             <!-- LOGO -->
             <tr>
                 <td class="signature__logo">
@@ -249,29 +281,33 @@
                     </table>
                 </td>
             </tr>
+        </table>
 
-            </table>
-            <div class="input-style" style="user-select: none; margin-top: 25px;">
-                <span>Enter your information below:</span>
-                <br>
-                <input type="text" id="input-name" placeholder="Name" onchange="applyChange(this)">
-                <br>
-                <input type="text" id="input-pronoun" placeholder="Pronoun" onchange="applyChange(this)">
-                <br>
-                <input type="text" id="input-title" placeholder="Title" onchange="applyChange(this)">
-                <br>
-                <input type="text" id="input-phone" placeholder="Phone" onchange="applyChange(this)">
-                <br>
-                <input type="text" id="input-other" placeholder="Other (Optional)" onchange="applyChange(this)">
-                <br>
-                <input type="text" id="input-email" placeholder="Email" onchange="applyChange(this)">
-                <br>
-                <input type="text" id="input-website" placeholder="Website (Optional)" onchange="applyChange(this)">
-                <br>
-                <br>
-            </div>
     </center>
 
+    <center>
+        <div class="input-style" style="user-select: none; margin-top: 25px;">
+            <span class="main">Enter your information below:</span>
+            <br>
+            <input type="text" id="input-name" placeholder="Name" onchange="applyChange(this)">
+            <br>
+            <input type="text" id="input-pronoun" placeholder="Pronoun" onchange="applyChange(this)">
+            <br>
+            <input type="text" id="input-title" placeholder="Title" onchange="applyChange(this)">
+            <br>
+            <input type="text" id="input-phone" placeholder="Phone" onchange="applyChange(this)">
+            <br>
+            <input type="text" id="input-other" placeholder="Other (Optional)" onchange="applyChange(this)">
+            <br>
+            <input type="text" id="input-email" placeholder="Email" onchange="applyChange(this)">
+            <br>
+            <input type="text" id="input-website" placeholder="Website (Optional)" onchange="applyChange(this)">
+            <br>
+            <br>
+        </div>
+
+        <button class="styled main" type="button" onclick="copyDivToClipboard()">Copy</button>
+    </center>
 
     <script>
         function applyChange(inputElement){
@@ -280,6 +316,16 @@
             let outputElement = document.getElementById(outputElementId);
             outputElement.innerHTML = value;
         }
+
+        function copyDivToClipboard() {
+            var range = document.createRange();
+            range.selectNode(document.getElementById("signature"));
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();// to deselect
+        }
+
     </script>
 
   </body>
