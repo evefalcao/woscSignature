@@ -131,35 +131,36 @@
 
         .input-style input {
             margin-top: 8px;
+            border: 1px solid #4168a5;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
         .styled {
-            width: 100px;
-            border: 0;
+            width: 75px;
+            border: 2px solid #4168a5;
+            background-color: white;
             line-height: 2.5;
-            padding: 20 20px;
+            padding: 0 20px;
             font-size: 14px;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
             text-align: center;
-            color: #fff;
-            border-radius: 5px;
-            background-color: #4168a5;
-            background-image: linear-gradient(
-                to top left,
-                rgba(0, 0, 0, 0.1),
-                rgba(0, 0, 0, 0.1) 10%,
-                rgba(0, 0, 0, 0)
-            );
-
+            color: #4168a5;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
 
         .styled:hover {
-            background-color: #4160a0
+            background: #4168a5;
+            color: white;
         }
 
         .styled:active {
-            box-shadow:
-                inset -2px -2px 2px #5799cc,
-                inset 3px 3px 3px #474747a2;
+            box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+            transform: translateY(-2px);
         }
 
 
@@ -304,7 +305,7 @@
             <br>
         </div>
 
-        <button class="styled main" type="button" onclick="copyDivToClipboard()">Copy</button>
+        <button id="copybtn" class="styled" type="button" onclick="copyDivToClipboard()">Copy</button>
     </center>
 
     <script>
@@ -322,6 +323,13 @@
             window.getSelection().addRange(range); // to select text
             document.execCommand("copy");
             window.getSelection().removeAllRanges();// to deselect
+            changeText();
+        }
+
+        function changeText(){
+            var elem = document.getElementById("copybtn");
+            if (elem.innerHTML=="Copy") elem.innerHTML = "Copied!";
+            else elem.innerHTML = "Copy";
         }
 
     </script>
