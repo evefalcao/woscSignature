@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOSC Signature</title>
     <style type="text/css">
         body {
-            margin:0;
+            margin: 0;
         }
+
         table {
             border-spacing: 0;
         }
+
         td {
             padding: 0;
         }
+
         img {
             border: 0;
         }
+
         .wrapper {
             width: 100%;
             table-layout: fixed;
             align-items: center;
             background-color: #FFFFFF;
-            margin: 10px
+            margin: 10px;
         }
+
         .main {
             width: 100%;
             max-width: 400px;
@@ -34,99 +40,51 @@
             text-align: left;
         }
 
-        .signature__logo {
+        .logo {
             border: 0;
             padding: 0;
             vertical-align: top;
-            width: 110px
+            width: 110px;
         }
-        .signature__logo-link {
-            display: inline-block;
-            text-decoration: none!important
-        }
-        .signature__logo-image {
-            display: block
-        }
-        .signature__spacer {
+
+        .spacer {
             border: 0;
             font-size: 0;
             margin: 0;
-            padding: 0
-        }
-        .signature__spacer--border-top {
-            border-top: 1px solid #dee5ed
-        }
-        .signature__spacer--axis-y {
-            padding-right: 6px
-        }
-        .signature__spacer--font-fix {
-            font-size: 1px;
-            line-height: 1
-        }
-        .signature__filler {
-            border: 0;
-            font-size: 0;
-            margin: 0;
-            padding: 0
-        }
-        .signature__info-item {
-            border: 0;
-            padding: 0 0 2px;
-            font-size: 11px
-        }
-        .signature__full-name {
-            font-weight: 700;
-            font-size: 13px
-        }
-        .signature__qualifications {
-            font-weight: 400;
-            font-size: 11px
-        }
-        .signature__link {
-            font-variant-numeric: tabular-nums!important;
-            text-decoration: unset
-        }
-        .signature__link-wrapper {
-            text-decoration: unset
-        }
-        .signature__info-item-small {
-            border: 0;
-            padding: 0 0 2px;
-            font-size: 10px
-        }
-        .signature__row {
-            -webkit-text-size-adjust: none;
-            border: 0;
-            border-collapse: collapse;
-            line-height: 1.2;
-            padding: 0
-        }
-        .signature__social-media-icon {
-            border: 0;
-            height: 24px;
             padding: 0;
-            width: 24px
         }
-        .signature__social-media-link {
-            display: block;
-            text-decoration: unset
+
+        .spacer-border-top {
+            border-top: 1px solid #dee5ed;
         }
-        .signature__icon {
-            display: block;
-            height: 24px;
-            width: 24px
+
+        .full-name {
+            font-weight: 700;
+            font-size: 13px;
         }
-        .text-color-base {
-            color: #151515
+
+        .qualifications {
+            font-weight: 400;
+            font-size: 11px;
         }
-        .text-color-highlight {
-            color: #cb3d48
+
+        .link {
+            font-variant-numeric: tabular-nums !important;
+            text-decoration: unset;
+            color: #4168a5;
         }
-        .text-color-link,.text-color-link:focus,.text-color-link:hover {
-            color: #4168a5
+
+        .info-item {
+            border: 0;
+            padding: 0 0 2px;
+            font-size: 11px
         }
-        .text-color-small {
-            color: #333333
+
+        .small-text {
+            border: 0;
+            padding: 0 0 2px;
+            font-size: 10px;
+            color: #333333;
         }
 
         .input-style input {
@@ -137,7 +95,15 @@
             line-height: 1.5;
         }
 
-        .styled {
+        .social-media-icon {
+            border: 0;
+            height: 24px;
+            padding: 0;
+            width: 24px;
+            padding-right: 6px;
+        }
+
+        .button {
             text-align: center;
             justify-content: center;
             width: 80px;
@@ -149,19 +115,14 @@
             font-family: 'Inter', Arial, Helvetica, sans-serif;
             color: #4168a5;
             cursor: pointer;
-            align-items: center;
-            flex-direction: column;
         }
 
-        .styled:hover {
-            text-align: center;
-            justify-content: center;
+        .button:hover {
             background: #4168a5;
             color: white;
         }
 
-        .styled:active {
-            text-align: center;
+        .button:active {
             box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
             transform: translateY(-2px);
         }
@@ -169,122 +130,108 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <center class="wrapper">
         <table id="signature" class="main" width="100%">
             <!-- LOGO -->
             <tr>
-                <td class="signature__logo">
-                    <a href="https://www.instagram.com/women.siggraph/" class="signature__logo-link">
-                        <img style="height:NaNpx; width:140px;" alt="Logo" 
-                        src="/img/wosc_black.png" 
-                        class="signature__logo-image">
+                <td class="logo">
+                    <a href="https://www.instagram.com/women.siggraph/" class="link">
+                        <img style="height:NaNpx; width:140px;" alt="Logo" src="/img/wosc_black.png">
                     </a>
                 </td>
             </tr>
 
             <!-- NAME -->
             <tr>
-                <td class="signature__info-item text-color-highlight">
-                    <span id="output-name" class="signature__full-name text-color-base">Eveline Falcão</span>
-                    <span id="output-pronoun" class="signature__qualifications text-color-base">She/her</span>
+                <td class="info-item">
+                    <span id="output-name" class="full-name">Eveline Falcão</span>
+                    <span id="output-pronoun" class="qualifications">She/her</span>
                 </td>
             </tr>
 
             <!-- TITLE -->
             <tr>
-                <td id="output-title" class="signature__info-item text-color-base">Creative Lead</td>
+                <td id="output-title" class="info-item">Creative Lead</td>
             </tr>
 
             <!-- SPACE -->
             <tr>
-                <td height="12" class="signature__spacer">&nbsp;</td>
+                <td height="12" class="spacer">&nbsp;</td>
             </tr>
 
             <!-- INFO 1 -->
             <tr>
-                <td class="signature__info-item signature__link text-color-link">
-                    <span id="output-phone" class="signature__link-wrapper text-color-link-wrapper">+55 111 1111 1111</span>
+                <td class="info-item">
+                    <span id="output-phone" class="link">+55 111 1111 1111</span>
                 </td>
             </tr>
 
             <!-- INFO 2 -->
             <tr>
-                <td class="signature__info-item signature__link text-color-link">
-                    <span id="output-other" class="signature__link-wrapper text-color-link-wrapper"></span>
+                <td class="info-item">
+                    <span id="output-other" class="link"></span>
                 </td>
             </tr>
 
-            <!-- INFO 3 -->
+            <!-- EMAIL -->
             <tr>
-                <td class="signature__info-item text-color-highlight">
-                    <a href="mailto:hello@evelinefalcao.com" class="signature__link text-color-link">
-                        <span id="output-email" class="signature__link-wrapper text-color-link-wrapper">hello@evelinefalcao.com</span>
-                    </a>
+                <td class="info-item">
+                    <a href="mailto:hello@evelinefalcao.com" class="link" id="output-email">hello@evelinefalcao.com</a>
                 </td>
             </tr>
-        
-            <!-- INFO 4 -->
+
+            <!-- WEBSITE -->
             <tr>
-                <td class="signature__info-item text-color-highlight">
-                    <a href="https://evelinefalcao.com" class="signature__link text-color-link">
-                        <span id="output-website" class="signature__link-wrapper text-color-link-wrapper">evelinefalcao.com</span>
-                    </a>
+                <td class="info-item">
+                    <a href="https://evelinefalcao.com" class="link" id="output-website">evelinefalcao.com</a>
                 </td>
             </tr>
 
             <!-- SPACE -->
             <tr>
-                <td height="6" class="signature__spacer">&nbsp;</td>
+                <td height="6" class="spacer">&nbsp;</td>
             </tr>
 
             <!-- LINE -->
             <tr>
-                <td height="6" class="signature__spacer signature__spacer--border-top">&nbsp;</td>
+                <td height="6" class="spacer spacer-border-top">&nbsp;</td>
             </tr>
 
             <!-- SMALL TEXT -->
             <tr>
-                <td class="signature__info-item-small text-color-small">Connecting and empowering women in CG and interactive techniques.</td>
+                <td class="info-item small-text">Connecting and empowering women in CG and interactive techniques.</td>
             </tr>
 
             <!-- SPACE -->
             <tr>
-                <td height="6" class="signature__spacer signature__spacer--font-fix">&nbsp;</td>
+                <td height="6" class="spacer">&nbsp;</td>
             </tr>
 
             <!-- ICONS -->
             <tr>
-                <td class="signature__info-item-small text-color-small">
-                    <table border="0" cellspacing="0" cellpadding="0" class="signature__row text-color-base">
-                        <tbody>
-                            <tr>
-                                <td width="24" height="24" class="signature__social-media-icon">
-                                    <a title="Visit our LinkedIn page" href="https://www.linkedin.com/company/women-of-siggraph-conversations" class="signature__social-media-link">
-                                        <img height="24" width="24" alt="LinkedIn logo" src="/img/linkedin_icon.png" class="signature__icon">
-                                    </a>
-                                </td>
-
-                            <td height="24" class="signature__spacer signature__spacer--axis-y">&nbsp;</td>
-
-                            <td width="24" height="24" class="signature__social-media-icon">
-                                <a title="Visit our Instagram page" href="https://www.instagram.com/women.siggraph/" class="signature__social-media-link">
-                                    <img height="24" width="24" alt="Instagram logo" src="/img/instagram_icon.png" class="signature__icon">
+                <td>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="24" height="24">
+                                <a href="https://www.linkedin.com/company/women-of-siggraph-conversations"
+                                    class="social-media-icon">
+                                    <img height="24" width="24" alt="LinkedIn" src="/img/linkedin_icon.png">
                                 </a>
                             </td>
 
-                                <td height="24" class="signature__spacer signature__spacer--axis-y">&nbsp;</td>
-                                <td class="signature__filler w-100">&nbsp;</td>
-                            </tr>
-                            
-                        </tbody>
+                            <td width="24" height="24">
+                                <a href="https://www.instagram.com/women.siggraph/" class="social-media-icon">
+                                    <img height="24" width="24" alt="Instagram" src="/img/instagram_icon.png">
+                                </a>
+                            </td>
+                        </tr>
                     </table>
                 </td>
             </tr>
         </table>
-
     </center>
 
     <center>
@@ -307,12 +254,12 @@
             <br>
             <br>
         </div>
-        <button id="copybtn" class="styled" type="button" onclick="copyDivToClipboard()">Copy</button>
+        <button id="copybtn" class="button" type="button" onclick="copyDivToClipboard()">Copy</button>
     </center>
-    
+
 
     <script>
-        function applyChange(inputElement){
+        function applyChange(inputElement) {
             let value = inputElement.value;
             let outputElementId = inputElement.id.replace("input", "output");
             let outputElement = document.getElementById(outputElementId);
@@ -329,12 +276,12 @@
             changeText();
         }
 
-        function changeText(){
+        function changeText() {
             var elem = document.getElementById("copybtn");
-            elem.setAttribute('style','text-align:justify; display:block;');
-            if (elem.innerHTML=="Copy") {
+            elem.setAttribute('style', 'text-align:justify; display:block;');
+            if (elem.innerHTML == "Copy") {
                 elem.innerHTML = "Copied!";
-                elem.setAttribute('style','text-align:center;');
+                elem.setAttribute('style', 'text-align:center;');
             }
             else elem.innerHTML = "Copy";
             setTimeout(() => {
@@ -344,6 +291,6 @@
 
     </script>
 
-  </body>
-</html>
+</body>
 
+</html>
